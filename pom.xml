@@ -25,7 +25,6 @@
 		<keycloak.version>11.0.3</keycloak.version>
 		<spring.version>2.4.0</spring.version>
 		<lombok.version>1.18.16</lombok.version>
-		<commons-lang3.version>3.11</commons-lang3.version>
 	</properties>
 
 	<dependencies>
@@ -47,9 +46,25 @@
 		</dependency>
 
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-mongodb</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+			<version>3.0.3.RELEASE</version>
+		</dependency>
+
+		<dependency>
 			<groupId>ayc</groupId>
 			<artifactId>keycloak-security</artifactId>
-			<version>0.0.2</version>
+			<version>0.0.8</version>
+		</dependency>
+		<dependency>
+			<groupId>ayc</groupId>
+			<artifactId>exception-handler</artifactId>
+			<version>0.0.3</version>
 		</dependency>
 	</dependencies>
 
