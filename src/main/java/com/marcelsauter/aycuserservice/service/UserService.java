@@ -9,6 +9,8 @@ import com.marcelsauter.aycuserservice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class UserService {
 
@@ -29,6 +31,11 @@ public class UserService {
     }
 
     public UserEntity saveUserData(UserEntity userData) {
+        Optional<UserEntity> user = this.userRepository.findById(this.securityUtil.getUsername());
+
+        if (user.isPresent()) {
+            userData.setOptionalData(user.get().getOptionalData());
+        }
         userData.setUsername(this.securityUtil.getUsername());
         userData.setEmail(this.securityUtil.getEmail());
 
