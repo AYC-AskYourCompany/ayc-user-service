@@ -59,7 +59,12 @@
 		<dependency>
 			<groupId>ayc</groupId>
 			<artifactId>keycloak-security</artifactId>
-			<version>0.0.2</version>
+			<version>0.0.8</version>
+		</dependency>
+		<dependency>
+			<groupId>ayc</groupId>
+			<artifactId>exception-handler</artifactId>
+			<version>0.0.3</version>
 		</dependency>
 	</dependencies>
 
