@@ -5,6 +5,8 @@ import com.ayc.exceptionhandler.exception.NotAuthorizedException;
 import com.ayc.keycloaksecurity.util.SecurityUtil;
 import com.marcelsauter.aycuserservice.consts.ErrorConst;
 import com.marcelsauter.aycuserservice.model.UserEntity;
+import com.marcelsauter.aycuserservice.model.dto.OptionalDataDTO;
+import com.marcelsauter.aycuserservice.model.dto.Skills;
 import com.marcelsauter.aycuserservice.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,6 +37,8 @@ public class UserService {
 
         if (user.isPresent()) {
             userData.setOptionalData(user.get().getOptionalData());
+        } else {
+            userData.setOptionalData(new OptionalDataDTO("", new Skills[]{}, "", ""));
         }
         userData.setUsername(this.securityUtil.getUsername());
         userData.setEmail(this.securityUtil.getEmail());
