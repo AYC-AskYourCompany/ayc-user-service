@@ -4,7 +4,7 @@ server:
 keycloak:
   auth-server-url: http://localhost:8007/auth
   realm: ayc
-  resource: ayc-user-service
+  resource: ayc-service
 
 security:
   cors:
